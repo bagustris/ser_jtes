@@ -1,0 +1,21 @@
+python3 /home/aad13432ni/github/ser-jtes-wav2vec2/run_wav2vec_clf.py \
+    --pooling_mode="mean" \
+    --model_name_or_path="vumichien/wav2vec2-large-xlsr-japanese-hiragana" \
+    --model_mode="hubert" \
+    --output_dir=/home/aad13432ni/github/ser-jtes-wav2vec2/models-hubert/ \
+    --train_file=/home/aad13432ni/github/ser-jtes-wav2vec2/content/data/train_ori_spc_glt.csv\
+    --validation_file=/home/aad13432ni/github/ser-jtes-wav2vec2/content/data/eval_ori_spc_glt.csv \
+    --test_file=/home/aad13432ni/github/ser-jtes-wav2vec2/content/data/test_ori_spc_glt.csv \
+    --per_device_train_batch_size=4 \
+    --per_device_eval_batch_size=4 \
+    --gradient_accumulation_steps=2 \
+    --learning_rate=1e-4 \
+    --num_train_epochs=50.0 \
+    --evaluation_strategy="steps"\
+    --save_steps=100 \
+    --eval_steps=100 \
+    --logging_steps=100 \
+    --save_total_limit=2 \
+    --do_train \
+    --do_eval \
+    --freeze_feature_extractor
